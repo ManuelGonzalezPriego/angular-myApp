@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+  <h1>Primer ejercicio angular <span class="badge text-bg-secondary">New</span>:</h1>
+
+  <div *ngIf="centro" class="card" style="width: 32%; align-items: center; margin-left: 34%;">
+    <img [src]="centro.logo" class="card-img-top" style="width: 20rem;margin-top: 3%;">
+    <div class="card-body">
+      <h5 class="card-title">{{centro.nombre}}</h5>
+
+      <ul class="list-group" style="margin-bottom: 3%;">
+        <li class="list-group-item active">Localidad:{{centro.localidad}}</li>
+
+        <li class="list-group-item">Centro educativo:{{centro.nombre}}.</li>
+
+        <li class="list-group-item">Familia Profesional:{{centro.familiaProf}}</li>
+      </ul>
+    </div>
+  </div>
+  <button class="btn btn-primary my-2" (click)="centro.cambiarFamiliaProf()">
+    Cambiar Familia Profesional
+  </button>
+  <br>
+  <button class="btn btn-primary mx-2" (click)="cambiarCentro('-')">
+    <
+  </button>
+
+  <button class="btn btn-success" (click)="restaurarCentro()">
+    {{contador}}
+  </button>
+
+  <button class="btn btn-danger mx-2" (click)="eliminarCentro()">
+    X
+  </button>
+
+  <button class="btn btn-primary" (click)="cambiarCentro('+')">
+    >
+  </button>
+</div>
+
+

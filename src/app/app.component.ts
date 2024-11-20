@@ -1,13 +1,29 @@
+import { Contador } from './contador/components/contador.components';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AlumnoComponent } from "./Alumnos/Alumno/alumno.component";
+import { ContadorModule } from './contador/contador.module';
+import { HeroesModule } from './heroes/heroes.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [HeroesModule,ContadorModule, AlumnoComponent]
 })
 export class AppComponent {
-  title = 'my-app';
+  public X=1;
+  public title:string = 'A llorar a la llorería';
+  public constador:number=0;
+
+  incrementarPor():void{
+    this.constador+=this.X;
+  }
+
+  reset():void{
+    this.constador=0;
+  }
+  disminuirPor():void{
+    this.constador-=this.X;
+  }
 }
