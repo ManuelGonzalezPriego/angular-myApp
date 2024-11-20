@@ -72,9 +72,9 @@ export class AlumnoComponent {
     if(longitudPila>0){
       //El esplice me deja insertar en la lista un elemento en la posición que yo quiera ademas de indicarle si quiero borrar algo de la lista
       // Cuanoo haga esto
-      // Ademas haremos un segundo splice que eliminara el objeto en la posición del medio esto lo hcemos dividiendo la longitud entre 2 y redondeando hacia ablajo con floor
+      // Ademas haremos un pop para sacar el primer elemento de la pila
       // Por ultimo para ver que hemos eliminado pondremos que nos de el el objeto en la posición 0
-      this.centros.splice(this.contador,0,this.pila.splice(Math.floor(longitudPila/2),1)[0]);
+      this.centros.splice(this.contador,0,this.pila.pop()!);
       this.centro=this.centros[this.contador];
     }
   }
