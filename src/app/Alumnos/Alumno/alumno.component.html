@@ -61,8 +61,8 @@
   </div>
   <div *ngIf="pila.length>0" style="text-align: center; width: 32%; margin-left: 34%;" class="card-body my-2">
     <ul class="list-group" style="margin-bottom: 3%;">
-      <li class="list-group-item active">{{pila[0].nombre}}</li>
-      <li *ngFor="let centro of pila.slice(1).reverse()" class="list-group-item">{{centro.nombre}}</li>
+      <li class="list-group-item active">{{pila[pila.length-1].nombre}}</li>
+      <li *ngFor="let centro of pila.slice(0,pila.length-1).reverse()" class="list-group-item">{{centro.nombre}}</li>
     </ul>
   </div>
 
