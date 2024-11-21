@@ -59,11 +59,13 @@
       </ul>
     </div>
   </div>
-  <div style="text-align: center; width: 32%; margin-left: 34%;" class="card-body">
+  <div *ngIf="pila.length>0" style="text-align: center; width: 32%; margin-left: 34%;" class="card-body my-2">
     <ul class="list-group" style="margin-bottom: 3%;">
-      <li *ngFor="let centro of pila.reverse()" class="list-group-item">{{centro.nombre}}</li>
+      <li class="list-group-item active">{{pila[0].nombre}}</li>
+      <li *ngFor="let centro of pila.slice(1).reverse()" class="list-group-item">{{centro.nombre}}</li>
     </ul>
   </div>
+
   <button *ngIf="centros[contador]" class="btn btn-primary my-2" (click)="centros[contador].cambiarFamiliaProf()">
     Cambiar Familia Profesional
   </button>
