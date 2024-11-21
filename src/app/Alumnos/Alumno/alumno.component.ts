@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Contador } from '../../contador/components/contador.components';
 
 export class Centro{
   public contador=0;
@@ -49,21 +50,17 @@ export class AlumnoComponent {
 
   public pila:Centro[]=[];
 
-  public centro:Centro=this.centros[this.contador];
-
   public eliminarCentro(){
     //Con esto obtnemos el indice de el objeto (su número para ser mas claros)
-
-    let centro=this.centros.indexOf(this.centro);
-
-    if(centro!==-1){
-      this.pila.push(this.centro);
+    let centro=this.centros[this.contador];
+    if(centro!==null){
+      this.pila.push(centro);
       //Con splice indicamos que borre el objeto que esta en el indice que hemos obtenído con anterioridad y le diremos que solo querémos borrar 1 con el número del final
-      this.centros.splice(centro,1);
-      this.cambiarCentro("+");
-    }
-    else if(this.centro==null){
-      this.contador=0;
+      this.centros.splice(this.contador,1);
+
+      if (this.contador>0) {
+        this.contador--;
+      }
     }
   }
 
@@ -74,32 +71,14 @@ export class AlumnoComponent {
       // Cuanoo haga esto
       // Ademas haremos un pop para sacar el primer elemento de la pila
       // Por ultimo para ver que hemos eliminado pondremos que nos de el el objeto en la posición 0
-      this.centros.splice(this.contador,0,this.pila.pop()!);
-      this.centro=this.centros[this.contador];
-    }
-  }
-
-  public cambiarCentro(signo:string){
-    if(signo==="+"){
-      if(this.contador<this.centros.length-1){
-        this.contador++;
-      }
-      else{
+      if(this.centros.length>0){
+        this.centros.splice(this.contador,0,this.pila.pop()!);
+      }else{
+        //Esto lo tenemos que hacer ya que el contador se descordina
+        this.centros.push(this.pila.pop()!)
         this.contador=0;
       }
-    }else{
-      if(this.contador>0){
-        this.contador--;
-      }
-      else{
-        this.contador=this.centros.length-1;
-      }
     }
-
-    if(this.contador==-1){
-      this.contador=0;
-    }
-    this.centro=this.centros[this.contador];
   }
 
   // Otra forma mejro hecha
@@ -110,5 +89,12 @@ export class AlumnoComponent {
   //* siguiente(){
   //*   this.indice=(this.indice+1) % this.array.length;
   //* }
+  siguiente(){
+    this.contador=(this.contador+1) % this.centros.length;
+  }
+
+  anterior(){
+    this.contador=(this.contador-1 + this.centros.length) % this.centros.length;
+  }
 
 }
