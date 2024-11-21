@@ -15,23 +15,27 @@
       </ul>
     </div>
   </div>
-  <button class="btn btn-primary my-2" (click)="centro.cambiarFamiliaProf()">
+  <button *ngIf="centro" class="btn btn-primary my-2" (click)="centro.cambiarFamiliaProf()">
     Cambiar Familia Profesional
   </button>
   <br>
-  <button class="btn btn-primary mx-2" (click)="cambiarCentro('-')">
+  <button *ngIf="centro" class="btn btn-primary mx-2" (click)="cambiarCentro('-')">
     <
   </button>
 
-  <button class="btn btn-success" (click)="restaurarCentro()">
-    {{contador}}
+  <button *ngIf="centro" class="btn btn-success mx-2" (click)="restaurarCentro()">
+    {{contador+1}}
   </button>
 
-  <button class="btn btn-danger mx-2" (click)="eliminarCentro()">
+  <button *ngIf="!centro" class="btn btn-success mx-2" (click)="restaurarCentro()">
+    Recuperar ultimo centro
+  </button>
+
+  <button *ngIf="centro" class="btn btn-danger mx-2" (click)="eliminarCentro()">
     X
   </button>
 
-  <button class="btn btn-primary" (click)="cambiarCentro('+')">
+  <button *ngIf="centro" class="btn btn-primary mx-2" (click)="cambiarCentro('+')">
     >
   </button>
 </div>

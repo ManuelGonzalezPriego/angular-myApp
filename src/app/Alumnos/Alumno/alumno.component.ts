@@ -102,4 +102,13 @@ export class AlumnoComponent {
     this.centro=this.centros[this.contador];
   }
 
+  // Otra forma mejro hecha
+  //* anterior(){
+  //*   this.indice=(this.indice-1 + this.array.length) % this.array.length;
+  //* }
+
+  //* siguiente(){
+  //*   this.indice=(this.indice+1) % this.array.length;
+  //* }
+
 }
