@@ -15,6 +15,30 @@ export class MainPageComponent implements OnInit{
     {
       nombre:"Krilin",
       fuerza:120
+    },
+    {
+      nombre:"Goku",
+      fuerza:5000
+    },
+    {
+      nombre:"Krilin",
+      fuerza:120
+    },
+    {
+      nombre:"Goku",
+      fuerza:5000
+    },
+    {
+      nombre:"Krilin",
+      fuerza:120
+    },
+    {
+      nombre:"Goku",
+      fuerza:5000
+    },
+    {
+      nombre:"Krilin",
+      fuerza:120
     }
   ];
 
