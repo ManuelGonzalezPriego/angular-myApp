@@ -42,6 +42,12 @@ export class MainPageComponent implements OnInit{
     }
   ];
 
+  public onNewPersonaje(personaje:Personaje):void{
+    console.log('MainPage');
+    console.log(personaje);
+
+  }
+
   constructor(){}
 
   ngOnInit() { }
