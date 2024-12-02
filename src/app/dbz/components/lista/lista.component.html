@@ -7,13 +7,21 @@
   let esPrimero=first;
   let esUltimo=last
   "
-  class="list-group-item"
+  class="list-group-item d-flex justify-content-between align-items-center"
   [ngClass]="{
     'list-group-item-primary':esPar,
     'list-group-item-warning':esInpar,
     'list-group-item-danger':esUltimo,
     'list-group-item-info':esPrimero
   }"
-    ><span>{{i.nombre}} - </span><strong>Fuerza:</strong><span>{{i.fuerza}}</span>
+    >
+    <div>
+      <span class="text-primary">{{ix + 1}}. </span>
+      <span>{{i.nombre}} - </span>
+      <strong>Fuerza:</strong>
+      <span>{{i.fuerza}}</span>
+
+      <button class="btn btn-danger">X</button>
+    </div>
   </li>
 </ul>

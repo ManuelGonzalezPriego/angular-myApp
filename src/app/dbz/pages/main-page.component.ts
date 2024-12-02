@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Personaje } from "../interface/personaje.interface";
+import { Personaje } from '../interface/personaje.interface';
 
 @Component({
   selector: 'app-dbz-main-name',
@@ -43,9 +43,20 @@ export class MainPageComponent implements OnInit{
   ];
 
   public onNewPersonaje(personaje:Personaje):void{
-    console.log('MainPage');
-    console.log(personaje);
+    // console.log('MainPage');
+    // console.log(personaje);
 
+    this.personajes.push(personaje);
+  }
+
+  public onDelPersonaje(personaje:Personaje):void{
+    // console.log('MainPage');
+    // console.log(personaje);
+
+    if(this.personajes.length>0){
+
+      this.personajes.reduce(personaje);
+    }
   }
 
   constructor(){}
