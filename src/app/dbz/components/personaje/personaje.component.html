@@ -1,0 +1,13 @@
+<h4>Añadir Personaje</h4>
+<form class="row" (ngSubmit)="addPersonaje()">
+  <!-- Con ngModule lo que hacemos es pasarle al typescript lo que ponemos en el formulario en este caso hacemos que
+   personaje.nombre sea lo que contiene el imput nombre y lo mismo con la fuerza, cuando le demos a mandar ejecutará
+   e; ngSubmit que hemos puesto arriva, este evento actua sobre el boton que hemos puesto, detectara este y llamara
+   a la funcion de añádir personaje -->
+  <input type="text" [(ngModel)]="personaje.nombre" name="nombre" class="form-control mb-2" placeholder="Nombre">
+  <input type="text" [(ngModel)]="personaje.fuerza" name="fuerza" class="form-control mb-2" placeholder="Fuerza">
+  <button class="btn btn-primary">Añadir</button>
+
+  <pre>{{personaje | json}}</pre>
+</form>
+

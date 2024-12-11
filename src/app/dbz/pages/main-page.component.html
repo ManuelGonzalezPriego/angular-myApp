@@ -1,0 +1,21 @@
+<h1>DBZ Personajes</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Le pasamos por imput de listas personajes los personajes ya modificados por el evento onDelpersonaje del
+     modulo de listas que a su vez llamara al funcion onDelPersonaje de main.html
+     Este primer evento nos mandara el personaje a eliminar directamente de la lista y lo que nos emite el $event será
+     el hero que pasaremos por referencia a la uncion de onDelPersonaje de el main.ts (como la pagina es reactiva
+     al borrar el heroe de la lista padre "personajes actualizaremos por el imput la lista hija listaPersonajes")-->
+    <dbz-lista [listaPersonajes]="personajes" (onDelPersonaje)="onDelPersonaje($event)"></dbz-lista>
+  </div>
+
+  <div class="col">
+    <!-- Al recibir el evento de onNew persoaneje como en el caso anterior le pasamos el resultado a la funcion del main  -->
+    <dbz-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></dbz-add-personaje>
+  </div>
+</div>
+
+

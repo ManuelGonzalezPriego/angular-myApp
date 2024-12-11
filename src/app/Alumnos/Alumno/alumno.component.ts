@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Contador } from '../../contador/components/contador.components';
 
 export class Centro{
   public contador=0;
