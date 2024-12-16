@@ -10,13 +10,12 @@ export class PersonajeComponent {
   @Output()
   public onNewPersonaje: EventEmitter<Personaje>=new EventEmitter();
 
-
-
   public personaje:Personaje={
     nombre: '',
     fuerza: 0
   };
 
+  //Esta funcion emitira el personaje si su nombre no esta vacio y reseteara el nombre del personaje
   public addPersonaje(): void{
     //! debugger; Asi se debuguea desde script
     console.log(this.personaje);

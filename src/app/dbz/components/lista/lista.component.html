@@ -21,7 +21,8 @@
       <strong>Fuerza:</strong>
       <span>{{i.fuerza}}</span>
 
-      <button class="btn btn-danger">X</button>
+      <!-- Con esto le decimos que al dar a la x borre el heroe que estamos iterando -->
+      <button class="btn btn-danger" (click)="dellPersonaje(i)">X</button>
     </div>
   </li>
 </ul>
