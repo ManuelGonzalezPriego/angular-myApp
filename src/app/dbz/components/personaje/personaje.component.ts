@@ -30,4 +30,16 @@ export class PersonajeComponent {
       fuerza:0
     };
   }
+
+  public eliminarPersonaje(): void{
+    //! debugger; Asi se debuguea desde script
+    console.log(this.personaje);
+
+    this.onNewPersonaje.emit(this.personaje);
+
+    this.personaje={
+      nombre:"",
+      fuerza:0
+    };
+  }
 }
