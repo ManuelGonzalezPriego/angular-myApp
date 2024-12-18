@@ -20,11 +20,11 @@ export class ListaComponent {
   //Este emitira el objeto iterado
 
   @Output()
-  public onDelPersonaje: EventEmitter<Personaje>=new EventEmitter();
+  public onDelPersonaje: EventEmitter<string>=new EventEmitter();
 
   public dellPersonaje(personaje:Personaje):void{
     console.log(personaje);
-    this.onDelPersonaje.emit(personaje);
+    this.onDelPersonaje.emit(personaje.id);
   }
 
 }
