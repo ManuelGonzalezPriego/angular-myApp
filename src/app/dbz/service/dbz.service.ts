@@ -66,7 +66,7 @@ export class DbzService implements OnInit{
   //   }
   // }
 
-  //Con el uso de filter lo que haremos es una copía del array original exceptuando al id que pasamos por referéncia en el metodo
+  //Con el uso de filter lo que haremos es una copía del array original exceptuando al id que pasamos por argumento en el metodo
   public deltePersonajeById(id:string):void{
     this.personajes=this.personajes.filter(personaje=>personaje.id!==id); //Si el id de personaje no coincide con el id indicado crea el personaje
                                                                           // y añadelo a la nueva lista si no es así no lo crees... Despues iguale el array original a la copia

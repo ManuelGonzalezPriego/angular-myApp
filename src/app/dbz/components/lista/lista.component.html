@@ -15,14 +15,16 @@
     'list-group-item-info':esPrimero
   }"
     >
-    <div>
-      <span class="text-primary">{{ix + 1}}. </span>
-      <span>{{i.nombre}} - </span>
-      <strong>Fuerza:</strong>
-      <span>{{i.fuerza}}</span>
+    <div class="d-flex justify-content-between w-100">
+      <div>
+        <span class="text-primary">{{ix + 1}}. </span>
+        <span>{{i.nombre}} - </span>
+        <strong>Fuerza:</strong>
+        <span>{{i.fuerza}}</span>
+      </div>
 
-      <!-- Con esto le decimos que al dar a la x borre el heroe que estamos iterando -->
-      <button class="btn btn-danger" (click)="dellPersonaje(i)">X</button>
+        <!-- Con esto le decimos que al dar a la x borre el heroe que estamos iterando -->
+        <button class="btn btn-danger ms-auto" (click)="dellPersonaje(i)">X</button>
     </div>
   </li>
 </ul>
