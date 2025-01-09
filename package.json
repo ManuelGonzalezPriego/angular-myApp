@@ -10,8 +10,8 @@
     "build:href": "ng build --base-href ./",
     "delete:docs": "del docs",
     "copy:dist": "copyfiles dist/my-app/browser/* ./docs -f",
-    "build:GitHub": "npm run build:href && npm delete:docs && copy:dist",
-    "push:GitHub": "git add . && git commit --date='$(date --iso-8601=seconds) -m 'Actualización Docs.'"
+    "build:GitHub": " npm run build:href && npm run delete:docs && copy:dist ",
+    "push:GitHub": "git add . && git commit -m 'Commit_Docs' && git push origin main"
   },
   "private": true,
   "dependencies": {
