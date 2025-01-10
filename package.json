@@ -8,9 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:href": "ng build --base-href ./",
-    "delete:docs": "del docs",
+    "delete:docs": "del /Q docs",
     "copy:dist": "copyfiles dist/my-app/browser/* ./docs -f",
-    "build:GitHub": " npm run build:href && npm run delete:docs && copy:dist ",
+    "build:GitHub": "npm run delete:docs && npm run build:href && npm run copy:dist ",
     "push:GitHub": "git add . && git commit -m 'Commit_Docs' && git push origin main"
   },
   "private": true,
